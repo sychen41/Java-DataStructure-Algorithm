@@ -4,14 +4,8 @@ public class BST<Key extends Comparable<Key>, Value> {
 	private class Node {
 		//c3
 		//c
+		//c5
 		//c4
-<<<<<<< HEAD
-		 //testB
-		// conflict 
-		//???
-=======
-		//something
-		//Eclipse: check if in right branch
->>>>>>> refs/remotes/origin/master
+
 	}
 }
