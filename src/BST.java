@@ -7,6 +7,7 @@ public class BST<Key extends Comparable<Key>, Value> {
 		// conflict 
 =======
 		//testB
+		//something
 		//Eclipse: check if in right branch
 >>>>>>> refs/remotes/origin/master
 	}
