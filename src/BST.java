@@ -3,7 +3,8 @@ public class BST<Key extends Comparable<Key>, Value> {
 	private Node root;
 	private class Node {
 		//c3
-		//c2
+		//c
+		//c4
 <<<<<<< HEAD
 		 //testB
 		// conflict 
