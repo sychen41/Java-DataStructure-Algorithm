@@ -5,6 +5,7 @@ public class BST<Key extends Comparable<Key>, Value> {
 <<<<<<< HEAD
 		 //testB
 		// conflict 
+		//???
 =======
 		//something
 		//Eclipse: check if in right branch
