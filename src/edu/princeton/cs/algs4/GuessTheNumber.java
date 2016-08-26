@@ -7,15 +7,13 @@ public class GuessTheNumber {
 		//Alternative way:
 		//int theNumber = 1 + (int) (Math.random() * 100);
 		StdOut.println("Hit me with a number between 1 and 100");
-		int yourGuess;
-		boolean guess = false;
-		while (!guess) {
+		int yourGuess = 0;
+		while (yourGuess != theNumber) {
 			StdOut.println("Hit me");
 			yourGuess = StdIn.readInt();
-			if 		(yourGuess == theNumber) guess = true;
+			if 		(yourGuess == theNumber) StdOut.println("Bingo");
 			else if (yourGuess < theNumber) StdOut.println("too low");
 			else							StdOut.println("too high");
 		}
-		StdOut.println("Bingo!");
 	}
 }
