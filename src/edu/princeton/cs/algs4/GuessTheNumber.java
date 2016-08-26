@@ -3,8 +3,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class GuessTheNumber {
 	public static void main(String[] args) {
-		int theNumber = ThreadLocalRandom.current().nextInt(0, 101);
-		StdOut.println("Hit me with a number between 0 and 100");
+		int theNumber = ThreadLocalRandom.current().nextInt(1, 101);
+		//Alternative way:
+		//int theNumber = 1 + (int) (Math.random() * 100);
+		StdOut.println("Hit me with a number between 1 and 100");
 		int yourGuess;
 		boolean guess = false;
 		while (!guess) {
