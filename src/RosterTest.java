@@ -35,16 +35,52 @@ public class RosterTest {
 			}
 		}
 	}
-	
+
 	public static void printPersonsWithPredicate(
-		List<Person> roster, Predicate<Person> tester) {
+		    List<Person> roster, Predicate<Person> tester) {
+		    for (Person p : roster) {
+		        if (tester.test(p)) {
+		            p.printPerson();
+		        }
+		    }
+		}	
+
+	public static void processPerson(
+		List<Person> roster, 
+		Predicate<Person> tester,
+		Consumer<Person> block) {
 		for (Person p: roster) {
 			if (tester.test(p)) {
-				p.printPerson();
+				block.accept(p);;
 			}
 		}
 	}
 	
+	public static void processPersonWithFunction(
+		List<Person> roster, 
+		Predicate<Person> tester,
+		Function<Person, String> mapper,
+		Consumer<String> block) {
+		for (Person p: roster) {
+			if (tester.test(p)) {
+				String data = mapper.apply(p);
+				block.accept(data);;
+			}
+		}
+	}
+	
+	public static<X, Y> void processElement(
+		Iterable<X> source,
+		Predicate<X> tester,
+		Function<X, Y> mapper,
+		Consumer<Y> block) {
+		for (X x: source) {
+			if (tester.test(x)) {
+				Y y = mapper.apply(x);
+				block.accept(y);
+			}
+		}
+	}
 	
 	public static void main(String[] args) {
 		List<Person> roster = Person.createRoster();
@@ -78,10 +114,32 @@ public class RosterTest {
 						&& p.getAge() <= 25
 		);*/
 		
-		RosterTest.printPersonsWithPredicate(roster, 
-			(Person p) -> p.getGender() == Person.Sex.MALE 
+	/*	RosterTest.printPersonsWithPredicate(roster, 
+			p -> p.getGender() == Person.Sex.MALE 
 						&& p.getAge() >= 15
 						&& p.getAge() <= 25
-				);
+				);*/
+	/*	RosterTest.processPerson(
+			roster,
+			p -> p.getGender() == Person.Sex.MALE 
+						&& p.getAge() >= 15
+						&& p.getAge() <= 25,
+			p -> p.printPerson()
+			);*/
+	/*	RosterTest.processPersonWithFunction(roster,
+			p -> p.getGender() == Person.Sex.MALE 
+						&& p.getAge() >= 15
+						&& p.getAge() <= 25,
+			p -> p.getEmailAddress(),
+			eMail -> System.out.println(eMail)
+			);*/
+		RosterTest.processElement(roster,
+			p -> p.getGender() == Person.Sex.MALE,
+			//p -> p.getGender() == Person.Sex.MALE 
+			//			&& p.getAge() >= 15
+			//			&& p.getAge() <= 25,
+			(Person p) -> p.getEmailAddress(),
+			(String eMail) -> System.out.println(eMail)
+			);
 	}
 }
