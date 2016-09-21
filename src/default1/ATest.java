@@ -1,3 +1,4 @@
+package default1;
 
 public class ATest {
 	public int a = -1;

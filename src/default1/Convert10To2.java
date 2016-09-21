@@ -1,3 +1,4 @@
+package default1;
 
 public class Convert10To2 {
 	public static int powerOf2(double n) {

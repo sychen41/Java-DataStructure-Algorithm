@@ -1,3 +1,4 @@
+package default1;
 
 class Flower {
 	public String whats_Your_Name() {

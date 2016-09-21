@@ -1,4 +1,4 @@
-
+package default1;
 public class BTest {
 	private ATest at;
 	public BTest(int n) {

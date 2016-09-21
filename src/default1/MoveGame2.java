@@ -1,3 +1,4 @@
+package default1;
 
 public class MoveGame2 {
 	private static boolean isSolvable(int m, int[] arr, int i) {

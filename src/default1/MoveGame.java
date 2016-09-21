@@ -1,3 +1,4 @@
+package default1;
 import java.util.HashSet;
 
 public final class MoveGame {
@@ -49,5 +50,9 @@ public final class MoveGame {
 		int[] a1 = {0,0,0,0,1};
 		MoveGame g1 = new MoveGame(2,a1);
 		System.out.println(g1.move(0));
+		//LinkedListP<Integer> test = new LinkedListP<>();
+        //int accessProtected = test.pro;
+		//int accessPackagePrivate = test.pac;
+
 	}
 }

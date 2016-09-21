@@ -1,3 +1,4 @@
+package default1;
 import java.util.Scanner;
 import java.math.BigDecimal;
 import java.util.Arrays;
