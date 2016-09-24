@@ -1,6 +1,14 @@
 package edu.princeton.cs.algs4;
 
 public class HelloWord {
+    static class Student {
+    	int id;
+		String name;
+		Student(int id, String name) {
+			this.id = id;
+			this.name = name;
+		}
+	}
 	private boolean flag;
 	private String s = "HAHA";
 	public void setFlag(boolean flag) {this.flag = flag;}
@@ -23,6 +31,10 @@ public class HelloWord {
 		h.printS();
 		System.out.println(h); // h.toString() is called
         StdOut.println(h);
+        Student s1 = new Student(1, "chen");
+		Student s2 = s1;
+        s2 = null;
+        System.out.println(s1.name);
 	}
 
 }
