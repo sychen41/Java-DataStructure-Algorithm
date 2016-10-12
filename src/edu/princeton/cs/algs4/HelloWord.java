@@ -35,6 +35,10 @@ public class HelloWord {
 		Student s2 = s1;
         s2 = null;
         System.out.println(s1.name);
+		Student s3 = null; // s3 points to an address where there is a null object
+		Student s4 = s3; // now s4 points to the same address as s3 ( the address of a null object)
+		s3 = new Student(2, "Wu"); // now s3 points to a new address, where there is a Student object
+		//System.out.println(s4.name); // s4 still points to the null object, so this will throw a NullPointerException
 	}
 
 }

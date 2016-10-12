@@ -139,8 +139,8 @@ public class RosterTest {
 			//p -> p.getGender() == Person.Sex.MALE 
 			//			&& p.getAge() >= 15
 			//			&& p.getAge() <= 25,
-			(Person p) -> p.getEmailAddress(),
-			(String eMail) -> System.out.println(eMail)
+			p -> p.getEmailAddress(),
+			eMail -> System.out.println(eMail)
 			);
 	}
 }
