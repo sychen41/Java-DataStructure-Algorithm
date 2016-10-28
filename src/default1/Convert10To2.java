@@ -1,5 +1,7 @@
 package default1;
 
+import java.util.Scanner;
+
 public class Convert10To2 {
 	public static int powerOf2(double n) {
 		int count = 0;
@@ -13,7 +15,8 @@ public class Convert10To2 {
 		return count;
 	}
 	public static void main(String[] args) {
-		double input = Double.parseDouble(args[0]);
+		Scanner sc = new Scanner(System.in);
+		double input = Double.parseDouble(sc.next());
 		int count = powerOf2(input);
 		double rest = input - Math.pow(2, count);
 		int[] base2Format = new int[count+1];
@@ -23,7 +26,7 @@ public class Convert10To2 {
 			rest -= Math.pow(2, count);
 			base2Format[count] = 1;
 		}
-
+		System.out.println("unfinished program");
 	}
 
 }

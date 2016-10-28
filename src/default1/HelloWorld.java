@@ -22,14 +22,14 @@ public class HelloWorld {
         System.out.println(underflow); // 0
 
         try {
-            int overflow2 = add2(/*Integer.MAX_VALUE*/0, Integer.MAX_VALUE);
-            System.out.println(overflow2); // -2
+            int overflow2 = add2(Integer.MAX_VALUE, Integer.MAX_VALUE);
+            System.out.println(overflow2); // overflow  exception
         } catch (ArithmeticException e) {
             System.out.println(e);
         }
         try {
             int underflow2 = add2(Integer.MIN_VALUE, Integer.MIN_VALUE);
-            System.out.println(underflow2); // 0
+            System.out.println(underflow2); // overflow exception
         } catch (ArithmeticException e) {
             System.out.println(e);
         }

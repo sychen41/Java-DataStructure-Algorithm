@@ -6,19 +6,24 @@ import java.util.Scanner;
 
 public class FileIOPractice {
 	public static void main(String[] args) {
-		File file = new File(".\\data\\test.txt");
+        File file = null;
+        PrintWriter output = null;
 		try {
-			PrintWriter output = new PrintWriter(file);
+			file = new File(".\\data1\\test.txt");
+			output = new PrintWriter(file);
 			output.println("Andy");
 			output.println(1);
-			output.close();
-			System.out.println("closed");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
-			System.out.printf("Error Catched: %s\n", e);
+			System.out.printf("Error Catched when creating file: %s\n", e);
+		} finally {
+			if (output!=null) {
+				output.close();
+				System.out.println("closed");
+			}
 		}
-		Scanner input;
+		Scanner input = null;
 		try {
 			input = new Scanner(file);
 			String name = input.nextLine();
@@ -26,7 +31,10 @@ public class FileIOPractice {
 			System.out.printf("Name: %s Age: %d\n", name, age);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.printf("Error Catched when scanning file: %s\n", e);
+			//e.printStackTrace();
+		} finally {
+			if (input!=null) input.close();
 		}
 	}
 }

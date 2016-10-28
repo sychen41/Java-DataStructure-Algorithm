@@ -1,6 +1,7 @@
 package default1;
 
 import java.io.*;
+import java.math.BigInteger;
 import java.util.*;
 
 interface PerformOperation {
@@ -12,10 +13,17 @@ class MyMath {
         return p.check(num);
     }
     public PerformOperation is_odd() {
-        return num -> {if (num%2 == 0) return false;
-                        else return true;};
+        //return num -> {if (num%2 == 0) return false;
+        //                else return true;};
+        return new PerformOperation() {
+            public boolean check(int a) {
+                if (a%2==0) return false;
+                else return true;
+            }
+        };
     }
     public PerformOperation is_prime() {
+        /*
         return num -> {
             if (num==0 ||num==1) return false;
             for(int i=2;i<=num/2;i++)
@@ -23,8 +31,15 @@ class MyMath {
                     return false;
             return true;
         };
+        */
+        return new PerformOperation() {
+            public boolean check(int a) {
+                return new BigInteger(""+a).isProbablePrime(5);
+            }
+        };
     }
     public PerformOperation is_palindrome() {
+        /*
         return num -> {
             String s = ""+num;
             String rev = "";
@@ -33,6 +48,16 @@ class MyMath {
             }
             if (s.equals(rev)) return true;
             else return false;
+        };
+        */
+        return new PerformOperation() {
+            public boolean check(int a) {
+                StringBuilder sb = new StringBuilder();
+                sb.append(a);
+                String original = sb.toString();
+                sb = sb.reverse();
+                return original.equals(sb.toString());
+            }
         };
     }
 }

@@ -32,7 +32,7 @@ public class Caller {
 			public void methodToCallBack() throws InterruptedException {
 				// TODO Auto-generated method stub
 				Thread.sleep(3000);
-				System.out.println("haha");
+				System.out.println("gaga");
 			}
 			
 		});
@@ -42,7 +42,7 @@ public class Caller {
 			public void methodToCallBack() throws InterruptedException {
 				// TODO Auto-generated method stub
 				Thread.sleep(3000);
-				System.out.println("haha");
+				System.out.println("zaza");
 			}
 			
 		});
