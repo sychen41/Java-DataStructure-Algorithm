@@ -13,12 +13,10 @@ public class MyHashTableVer1<K,V> implements MyHashTable<K,V> {
         }
     }
     private MyLinkedList<Data>[] arrayOfLList;
-    private int arrLength = 5; //default value
+    private int arrLength;
 
     public MyHashTableVer1() {
-        arrayOfLList = new MyLinkedList[this.arrLength];
-        for(int i=0; i<this.arrLength; i++)
-            arrayOfLList[i] = new MyLinkedList<>();
+        this(5);  //default value
     }
     public MyHashTableVer1(int size) {
         this.arrLength = size;
