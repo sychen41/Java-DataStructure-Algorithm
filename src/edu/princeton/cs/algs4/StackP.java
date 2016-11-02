@@ -1,5 +1,5 @@
 package edu.princeton.cs.algs4;
-import default1.LinkedListP;
+import round1.LinkedListP;
 /**
  * Created by Shiyi on 9/20/2016.
  */
