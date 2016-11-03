@@ -12,7 +12,7 @@ public class MyHashTableVer1<K,V> implements MyHashTable<K,V> {
             this.val = val;
         }
     }
-    private MyLinkedList<Data>[] arrayOfLList;
+    private MyLinkedListVer1<Data>[] arrayOfLList;
     private int arrLength;
 
     public MyHashTableVer1() {
@@ -20,9 +20,9 @@ public class MyHashTableVer1<K,V> implements MyHashTable<K,V> {
     }
     public MyHashTableVer1(int size) {
         this.arrLength = size;
-        arrayOfLList = new MyLinkedList[this.arrLength];
+        arrayOfLList = new MyLinkedListVer1[this.arrLength];
         for(int i=0; i<this.arrLength; i++)
-            arrayOfLList[i] = new MyLinkedList<>();
+            arrayOfLList[i] = new MyLinkedListVer1<>();
     }
     // instance initializer
     {

@@ -3,9 +3,9 @@ package round2;
 /**
  * Created by Shiyi on 11/2/2016.
  */
-public class MyListMain {
+public class MyLinkedListVer1Main {
     public static void main(String[] args) {
-        MyLinkedList<Integer> list1 = new MyLinkedList<>();
+        MyLinkedListVer1<Integer> list1 = new MyLinkedListVer1<>();
         list1.addFirst(3);
         System.out.println(list1.peekFirst());
         list1.addFirst(2);
