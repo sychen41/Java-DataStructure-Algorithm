@@ -6,7 +6,7 @@ package round2;
 public class MyHashTableVer1Main {
     public static void main(String[] args) {
         MyHashTableVer1<String, Integer> ht = new MyHashTableVer1<>(2);
-        //MyHashTableVer1<String, Integer> ht = new MyHashTableVer1<>();
+        //MyHashTableVer1<String, Integer> ht2 = new MyHashTableVer1<>();
         ht.put("a", 1);
         ht.put("b", 2);
         ht.put("c", 3);
