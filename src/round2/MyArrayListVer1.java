@@ -17,11 +17,6 @@ public class MyArrayListVer1<T> implements MyArrayList<T> {
         cla = clazz;
         arr = (T[]) Array.newInstance(cla, capacity);
     }
-    public void printList() {
-        for(T item: arr)
-            System.out.print(item+" ");
-        System.out.println();
-    }
     @Override
     public void add(T item) {
         if (currentIndex >= capacity) {
@@ -39,6 +34,7 @@ public class MyArrayListVer1<T> implements MyArrayList<T> {
     public void add(T item, int index) {
         if (index >= capacity) throw new IndexOutOfBoundsException();
         add(item);//call add in case resizing needed.
+        /*
         T oldElementAtIndex = arr[index];
         T[] newArr = (T[]) Array.newInstance(cla, capacity);
         for(int i=0;i<index;i++)
@@ -47,6 +43,10 @@ public class MyArrayListVer1<T> implements MyArrayList<T> {
         for(int i=index+1;i<size;i++)
             newArr[i] = arr[i-1];
         arr = newArr;
+        */
+        for(int i=size-1;i>index;i--)
+            arr[i] = arr[i-1];
+        arr[index] = item;
     }
 
     @Override
@@ -60,12 +60,16 @@ public class MyArrayListVer1<T> implements MyArrayList<T> {
     @Override
     public void remove(int index) {
         if (index>=size) throw new IndexOutOfBoundsException();
+        /*
         T[] newArr = (T[]) Array.newInstance(cla, capacity);
         for(int i=0;i<index;i++)
             newArr[i] = arr[i];
         for(int i=index;i<size-1;i++)
             newArr[i] = arr[i+1];
         arr = newArr;
+        */
+        for(int i=index;i<size;i++)
+            arr[index] = arr[index+1];
         size--;
         currentIndex--;
     }

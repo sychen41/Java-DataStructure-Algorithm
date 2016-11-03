@@ -12,11 +12,18 @@ public class MyArrayListVer1Main {
         arrList.add(4);
         arrList.add(5);
         arrList.add(3,3);
-        arrList.printList();
+
+        for(Integer num: arrList)
+            System.out.print(num+" ");
+        System.out.println();
         System.out.println(arrList.size());
+
         arrList.remove(4);
-        arrList.printList();
+        for(Integer num: arrList)
+            System.out.print(num+" ");
+        System.out.println();
         System.out.println(arrList.size());
+
         if (arrList.contains(3))
             System.out.println("contains 3");
         if (arrList.contains(6))

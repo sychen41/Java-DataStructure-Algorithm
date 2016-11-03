@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="774dd038-ce65-4951-9460-b284499a5667" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/round2/MyArrayList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/round2/MyArrayListVer1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/round2/MyArrayListVer1Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyLinkedList.java" afterPath="$PROJECT_DIR$/src/round2/MyLinkedListVer1.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyList.java" afterPath="$PROJECT_DIR$/src/round2/MyLinkedList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyListMain.java" afterPath="$PROJECT_DIR$/src/round2/MyLinkedListVer1Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/round2/MyHashTableVer1.java" afterPath="$PROJECT_DIR$/src/round2/MyHashTableVer1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/round2/MyArrayListVer1.java" afterPath="$PROJECT_DIR$/src/round2/MyArrayListVer1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/round2/MyArrayListVer1Main.java" afterPath="$PROJECT_DIR$/src/round2/MyArrayListVer1Main.java" />
     </list>
     <ignored path="AlgorithmPractice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,20 +38,20 @@
       <file leaf-file-name="MyArrayListVer1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/round2/MyArrayListVer1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1580">
-              <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+            <state relative-caret-position="620">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2190#2191#0" expanded="true" />
-                <element signature="e#2220#2221#0" expanded="true" />
-                <element signature="e#2259#2260#0" expanded="true" />
-                <element signature="e#2286#2287#0" expanded="true" />
-                <element signature="e#2337#2338#0" expanded="true" />
-                <element signature="e#2385#2386#0" expanded="true" />
-                <element signature="e#2535#2536#0" expanded="true" />
-                <element signature="e#2579#2580#0" expanded="true" />
-                <element signature="e#2624#2625#0" expanded="true" />
-                <element signature="e#2669#2670#0" expanded="true" />
+                <element signature="e#2274#2275#0" expanded="true" />
+                <element signature="e#2304#2305#0" expanded="true" />
+                <element signature="e#2343#2344#0" expanded="true" />
+                <element signature="e#2370#2371#0" expanded="true" />
+                <element signature="e#2421#2422#0" expanded="true" />
+                <element signature="e#2469#2470#0" expanded="true" />
+                <element signature="e#2619#2620#0" expanded="true" />
+                <element signature="e#2663#2664#0" expanded="true" />
+                <element signature="e#2708#2709#0" expanded="true" />
+                <element signature="e#2753#2754#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,8 +60,8 @@
       <file leaf-file-name="MyArrayListVer1Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/round2/MyArrayListVer1Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+            <state relative-caret-position="640">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -981,7 +975,7 @@
       <workItem from="1477684306341" duration="17000" />
       <workItem from="1478096964894" duration="9859000" />
       <workItem from="1478124722251" duration="1951000" />
-      <workItem from="1478131984620" duration="4154000" />
+      <workItem from="1478131984620" duration="5009000" />
     </task>
     <servers />
   </component>
@@ -994,7 +988,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136904000" />
+    <option name="totallyTimeSpent" value="137759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
@@ -1461,28 +1455,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/round2/MyArrayListVer1Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        <state relative-caret-position="640">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/round2/MyArrayListVer1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1580">
-          <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+        <state relative-caret-position="620">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2190#2191#0" expanded="true" />
-            <element signature="e#2220#2221#0" expanded="true" />
-            <element signature="e#2259#2260#0" expanded="true" />
-            <element signature="e#2286#2287#0" expanded="true" />
-            <element signature="e#2337#2338#0" expanded="true" />
-            <element signature="e#2385#2386#0" expanded="true" />
-            <element signature="e#2535#2536#0" expanded="true" />
-            <element signature="e#2579#2580#0" expanded="true" />
-            <element signature="e#2624#2625#0" expanded="true" />
-            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="e#2274#2275#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
+            <element signature="e#2343#2344#0" expanded="true" />
+            <element signature="e#2370#2371#0" expanded="true" />
+            <element signature="e#2421#2422#0" expanded="true" />
+            <element signature="e#2469#2470#0" expanded="true" />
+            <element signature="e#2619#2620#0" expanded="true" />
+            <element signature="e#2663#2664#0" expanded="true" />
+            <element signature="e#2708#2709#0" expanded="true" />
+            <element signature="e#2753#2754#0" expanded="true" />
           </folding>
         </state>
       </provider>
