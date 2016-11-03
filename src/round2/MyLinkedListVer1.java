@@ -80,6 +80,35 @@ public class MyLinkedListVer1<T> implements MyLinkedList<T> {
         }
     }
 
+    // change 1->2->3->4 to 1->3->2->4 using fast-slow pointer technique
+    public void weavingList() {
+        Node fast = head;
+        Node slow = head;
+        while(fast!=null) {
+            fast = fast.next;
+            fast = fast.next;
+            slow = slow.next;
+        }
+        // now fast has reached the end, slow has reached the middle
+        // move the fast to the beginning, and start weaving
+        fast = head;
+        head = mergeTwoList(fast,slow);
+    }
+
+    private Node mergeTwoList(Node head1, Node head2) {
+        Node newHead = head1;
+        Node current = newHead;
+        while(head2.next!=null) {
+            head1 = head1.next;
+            current.next = head2;
+            current = current.next;
+            head2 = head2.next;
+            current.next= head1;
+            current = current.next;
+        }
+        current.next = head2;
+        return newHead;
+    }
     @Override
     public Iterator<T> iterator() {
         return new MyLinkedListIterator(head);
