@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="774dd038-ce65-4951-9460-b284499a5667" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyArrayList.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyArrayList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyArrayListVer1.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyArrayListVer1.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyArrayListVer1Main.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyArrayListVer1Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyBST.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyBST.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyBSTVer1.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyBSTVer1.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyHashTable.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyHashTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyHashTableVer1.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyHashTableVer1.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyHashTableVer1Main.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyHashTableVer1Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyLinkedList.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyLinkedList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyLinkedListVer1.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyLinkedListVer1.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyLinkedListVer1Main.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyLinkedListVer1Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyLinkedListVer2.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyLinkedListVer2.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyLinkedListVer2Main.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyLinkedListVer2Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyQueue.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyQueue.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyQueueVer1.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyQueueVer1.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyStack.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyStack.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyStackVer1.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyStackVer1.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyStringBuilder.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyStringBuilder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyStringBuilderVer1.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyStringBuilderVer1.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/round2/MyStringBuilderVer1Main.java" afterPath="$PROJECT_DIR$/src/DataStructureMyVersion/MyStringBuilderVer1Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/randomNumGen.txt" afterPath="" />
     </list>
     <ignored path="AlgorithmPractice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -935,7 +915,7 @@
       <workItem from="1478180204442" duration="153000" />
       <workItem from="1478180375206" duration="10871000" />
       <workItem from="1478214656012" duration="9652000" />
-      <workItem from="1478230611564" duration="10000" />
+      <workItem from="1478230611564" duration="161000" />
     </task>
     <servers />
   </component>
@@ -948,7 +928,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163700000" />
+    <option name="totallyTimeSpent" value="163851000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="0" width="1872" height="1087" extended-state="0" />
