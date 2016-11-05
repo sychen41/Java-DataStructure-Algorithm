@@ -22,7 +22,7 @@ public class MyHashTableVer1<K,V> implements MyHashTable<K,V> {
         this.arrLength = size;
         arrayOfLList = new MyLinkedListVer1[this.arrLength];
         for(int i=0; i<this.arrLength; i++)
-            arrayOfLList[i] = new MyLinkedListVer1<>();
+            arrayOfLList[i] = new MyLinkedListVer1<Data>();
     }
     // instance initializer
     {
