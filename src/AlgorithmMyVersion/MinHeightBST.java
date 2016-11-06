@@ -111,9 +111,11 @@ public class MinHeightBST {
     //end of 4.3
 
     //p110 4.4
+    /*
+    //1st solution
     public boolean checkIfBalance() {
         try {
-            checkIfBalance(root);
+            checkHeight(root);
             return true;
         }
         catch(Exception e) {
@@ -125,19 +127,114 @@ public class MinHeightBST {
         return false;
     }
 
-    private int checkIfBalance(Node node) throws Exception {
-        if (node==null) return 0;
-        int leftDepth = 1 + checkIfBalance(node.left);
-        int rightDepth = 1 + checkIfBalance(node.right);
+    private int checkHeight(Node node) throws Exception {
+        if (node==null) return -1;
+        int leftDepth = 1 + checkHeight(node.left);
+        int rightDepth = 1 + checkHeight(node.right);
         if (Math.abs(leftDepth-rightDepth) > 1) {
             throw new Exception("Not a balanced tree");
         }
         return leftDepth>=rightDepth ? leftDepth : rightDepth;
     }
+    */
+    //2nd solution
+    public boolean checkIfBalance() {
+        return checkHeight(root) != Integer.MIN_VALUE;
+    }
+    private int checkHeight(Node node) {
+        if (node==null) return -1;
+        int leftHeight = checkHeight(node.left);
+        // use error code Integer.MIN_VALUE as a special stopping criteria, and pass it up
+        if (leftHeight == Integer.MIN_VALUE) return Integer.MIN_VALUE;
+        int rightHeight = checkHeight(node.right);
+        // use error code Integer.MIN_VALUE as a special stopping criteria, and pass it up.
+        if (rightHeight == Integer.MIN_VALUE) return Integer.MIN_VALUE;
+        if (Math.abs(leftHeight - rightHeight) > 1)
+            // generate an error code and return it instead of the real height
+            return Integer.MIN_VALUE;
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
     //end of 4.4
 
+    //p245 4.5
+    /*
+    //wrong solution 1. Counter Example: p247 middle graph
+    public boolean isBinarySearchTree() {
+        return isBinarySearchTree(root);
+    }
+
+    private boolean isBinarySearchTree(Node node) {
+        if (node==null) return true;
+        boolean isBST = true;
+        isBST = isBSTNode(node);
+        if (!isBST) return false;
+        isBST = isBinarySearchTree(node.left);
+        if (!isBST) return false;
+        isBST = isBinarySearchTree(node.right);
+        if (!isBST) return false;
+        return isBST;
+    }
+
+    private boolean isBSTNode(Node node) {
+        if (node.left!=null)
+            if (node.data < node.left.data) // left should be < or = the node
+                return false;
+        if (node.right!=null)
+            if (node.data >= node.right.data) // right should be strictly > the node
+                return false;
+        return true;
+    }
+    //end of wrong solution 1
+    */
+    /*
+    //wrong solution 2: counter example: root = Integer.MAX_VALUE
+    public boolean isBinarySearchTree() {
+        return isBinarySearchTree(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private boolean isBinarySearchTree(Node node, int min, int max) {
+        //null case
+        if (node == null) return true;
+        //base case
+        if (min > node.data || max <= node.data) return false;
+        //recursion part
+        if (!isBinarySearchTree(node.left, min, node.data))
+            // early exit (no need to continue recursion call)
+            return false;
+        if (!isBinarySearchTree(node.right, node.data, max))
+            return false;
+        //recursion return
+        return true;
+    }
+    //end of wrong solution 2
+    */
+    //right solution
+    public boolean isBinarySearchTree() {
+        return isBinarySearchTree(root, null, null);
+    }
+
+    private boolean isBinarySearchTree(Node node, Integer min, Integer max) {
+        //null case
+        if (node == null) return true;
+        //base case
+        if ((min!= null && min > node.data)
+                || (max!=null && max <= node.data))
+            return false;
+        //recursion part
+        if (!isBinarySearchTree(node.left, min, node.data))
+            // early exit (no need to continue recursion call)
+            return false;
+        if (!isBinarySearchTree(node.right, node.data, max))
+            return false;
+        //recursion return
+        return true;
+    }
+    //end of right solution
+    //end of 4.5
+
+
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7};
+        int[] arr = {1,2,3,7,5,6,4};
         MinHeightBST mhbst = new MinHeightBST(arr);
         ArrayList<LinkedList<Integer>> listOfDepth = mhbst.listOfDepth();
         listOfDepth.forEach(
@@ -148,12 +245,18 @@ public class MinHeightBST {
                     System.out.println("\nend of one level");
                 }
         );
+        if (mhbst.isBinarySearchTree())
+            System.out.println("is BST");
+        else
+            System.out.println("not BST");
         /*
         for(LinkedList<Integer> list: listOfDepth) {
             list.forEach(e->System.out.print(e + " "));
             System.out.println("\nend of one level");
         }
         */
+
+
         /*
         // use this and the first process() for p110 4.4
         int[] arr = {1,2,3};
