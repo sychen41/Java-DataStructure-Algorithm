@@ -30,6 +30,16 @@ public class MinHeightBST {
         this.root = process(0, arr.length-1);
     }
 
+    /*
+    //p110 4.4
+    private Node process(int start, int end) {
+        Node temp = new Node(arr[start++]);
+        if (start<=end)
+            temp.right = process(start, end);
+        return temp;
+    }
+    //end of 4.4
+    */
     //p109 4.2
     private Node process(int start, int end) {
         int middle = start + (end - start + 1)/2;
@@ -40,6 +50,8 @@ public class MinHeightBST {
             temp.right = process(middle + 1, end);
         return temp;
     }
+    //end of 4.2
+
     //p109 4.3 // method 1: BFS
     public ArrayList<LinkedList<Integer>> listOfDepth() {
         class NodeAndDepth {
@@ -96,20 +108,64 @@ public class MinHeightBST {
             listOfDepth.get(level).add(node.data);
         }
     }
+    //end of 4.3
+
+    //p110 4.4
+    public boolean checkIfBalance() {
+        try {
+            checkIfBalance(root);
+            return true;
+        }
+        catch(Exception e) {
+            if (e.getMessage().equals("Not a balanced tree"))
+                return false;
+            else
+                System.out.println(e.getMessage());
+        }
+        return false;
+    }
+
+    private int checkIfBalance(Node node) throws Exception {
+        if (node==null) return 0;
+        int leftDepth = 1 + checkIfBalance(node.left);
+        int rightDepth = 1 + checkIfBalance(node.right);
+        if (Math.abs(leftDepth-rightDepth) > 1) {
+            throw new Exception("Not a balanced tree");
+        }
+        return leftDepth>=rightDepth ? leftDepth : rightDepth;
+    }
+    //end of 4.4
 
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5,6,7};
         MinHeightBST mhbst = new MinHeightBST(arr);
         ArrayList<LinkedList<Integer>> listOfDepth = mhbst.listOfDepth();
+        listOfDepth.forEach(
+                list->{
+                    list.forEach(
+                            num->System.out.print(num+" ")
+                    );
+                    System.out.println("\nend of one level");
+                }
+        );
+        /*
         for(LinkedList<Integer> list: listOfDepth) {
             list.forEach(e->System.out.print(e + " "));
             System.out.println("\nend of one level");
         }
+        */
+        /*
+        // use this and the first process() for p110 4.4
+        int[] arr = {1,2,3};
+        MinHeightBST mhbst = new MinHeightBST(arr);
         ArrayList<LinkedList<Integer>> listOfDepth2 = mhbst.listOfDepth2();
         for(LinkedList<Integer> list: listOfDepth2) {
             //list.forEach(System.out::println);
             list.forEach(e->System.out.print(e + " "));
             System.out.println("\nend of one level");
         }
+        if (mhbst.checkIfBalance()) System.out.println("balanced");
+        else System.out.println("not balanced");
+        */
     }
 }
