@@ -1,14 +1,12 @@
 package AlgorithmMyVersion;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by Shiyi on 11/5/2016.
  */
-public class MinHeightBST {
+public class MinHeightBST implements Iterable<Integer> {
+
     class Node {
         int data;
         Node left = null;
@@ -357,6 +355,40 @@ public class MinHeightBST {
         return sb.toString();
     }
 
+    @Override
+    public Iterator<Integer> iterator() {
+        return new MinHeightBSTIter(root);
+    }
+
+    private class MinHeightBSTIter implements Iterator<Integer> {
+        private Node cur = null;
+        private Stack<Node> st = null;
+        public MinHeightBSTIter(Node root) {
+            st = new Stack<>();
+            cur = root;
+            while(cur!=null) {
+                st.push(cur);
+                cur = cur.left;
+            }
+        }
+
+        @Override
+        public boolean hasNext() {
+            return !st.isEmpty();
+        }
+
+        @Override
+        public Integer next() {
+            Node result = st.pop();
+            Node temp = result.right;
+            while(temp!=null) {
+                st.push(temp);
+                temp = temp.left;
+            }
+            return result.data;
+        }
+    }
+
     public static void main(String[] args) {
         //int[] arr = {1,2,3,7,5,6,4};
         int[] arr = {1,2,3,4,5,6,7};
@@ -375,6 +407,9 @@ public class MinHeightBST {
         else
             System.out.println("not BST");
         System.out.println(mhbst.traversalIterative(2));
+        for(Integer i: mhbst) {
+            System.out.println(i);
+        }
         /*
         for(LinkedList<Integer> list: listOfDepth) {
             list.forEach(e->System.out.print(e + " "));
@@ -397,4 +432,5 @@ public class MinHeightBST {
         else System.out.println("not balanced");
         */
     }
+
 }
