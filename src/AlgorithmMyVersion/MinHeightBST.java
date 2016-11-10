@@ -1,11 +1,9 @@
 package AlgorithmMyVersion;
 
-import DataStructureMyVersion.MyBSTVer1;
-import warmUp.Parent;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * Created by Shiyi on 11/5/2016.
@@ -19,7 +17,7 @@ public class MinHeightBST {
             this.data = data;
         }
     }
-    private Node root = null;
+    public Node root = null;
     private int[] arr = null;
     private int height = 1;
     public int getHeight() {
@@ -232,9 +230,136 @@ public class MinHeightBST {
     //end of right solution
     //end of 4.5
 
+    //p249 4.6
+    /*
+    //wrong solution
+    class BooleanWrap {
+        public boolean flag = false;
+    }
+    public Node nextOf(Node node) {
+        Node[] arr = new Node[1];
+        nextOf(node, root, arr, new BooleanWrap());
+        return arr[0];
+    }
+
+    private void nextOf(Node theNode, Node node, Node[] arr, BooleanWrap found) {
+        if (node == null) return;
+        nextOf(theNode, node.left, arr, found);
+        if (found.flag) {
+            arr[0] = node;
+            return;
+        }
+        if (node == theNode) {
+            found.flag = true;
+            return;
+        }
+        nextOf(theNode, node.right, arr, found);
+    }
+    //end of wrong solution
+    */
+
+    public String traversalIterative(int type) {
+        String str = null;
+        switch (type) {
+            case 1: str = inOrderIterative(root);
+                break;
+            case 2: str = preOrderIterative(root);
+                break;
+            case 3: str = postOrderIterative(root);
+            default: inOrderIterative(root);
+        }
+        return str;
+    }
+
+    /*
+    1.1 Create an empty stack
+    2.1 Do following while root is not NULL
+    a) Push root's right child and then root to stack.
+    b) Set root as root's left child.
+    2.2 Pop an item from stack and set it as root.
+    a) If the popped item has a right child and the right child
+       is at top of stack, then remove the right child from stack,
+       push the root back and set root as root's right child.
+    b) Else print root's data and set root as NULL.
+    2.3 Repeat steps 2.1 and 2.2 while stack is not empty.
+     */
+    private String postOrderIterative(Node node) {
+        StringBuilder sb = new StringBuilder();
+        Stack<Node> st = new Stack<>();
+        Node cur = node;
+        while(cur!=null) {
+            if (cur.right != null)
+                st.push(cur.right);
+            st.push(cur);
+            cur = cur.left;
+        }
+        while(!st.isEmpty()) {
+            Node root = st.pop();
+            if (!st.isEmpty() && root.right == st.peek()) {
+                Node temp2 = st.pop();
+                st.push(root);
+                while(temp2!=null) {
+                    if (temp2.right!=null)
+                        st.push(temp2.right);
+                    st.push(temp2);
+                    temp2 = temp2.left;
+                }
+            } else {
+                sb.append(root.data + " ");
+            }
+        }
+        return sb.toString();
+    }
+
+    private String preOrderIterative(Node node) {
+        StringBuilder sb = new StringBuilder();
+        Stack<Node> st = new Stack<>();
+        st.push(node);
+        while(!st.isEmpty()) {
+            Node temp = st.pop();
+            sb.append(temp.data + " ");
+            if (temp.right!=null)
+                st.push(temp.right);
+            if (temp.left!=null)
+                st.push(temp.left);
+        }
+        return sb.toString();
+    }
+
+
+    /*
+    1) Create an empty stack S.
+    2) Initialize current node as root
+    3) Push the current node to S and set current = current->left until current is NULL
+    4) If current is NULL and stack is not empty then
+     a) Pop the top item from stack.
+     b) Print the popped item, set current = popped_item->right
+     c) Go to step 3.
+    5) If current is NULL and stack is empty then we are done.
+     */
+    private String inOrderIterative(Node node) {
+        StringBuilder sb = new StringBuilder();
+        Stack<Node> st = new Stack<>();
+        Node cur = node;
+        while(cur != null) {
+            st.push(cur);
+            cur = cur.left;
+        }
+        while(!st.isEmpty()) {
+            Node temp = st.pop();
+            sb.append(temp.data + " ");
+            temp = temp.right;
+            while(temp != null) {
+                st.push(temp);
+                temp = temp.left;
+            }
+        }
+        return sb.toString();
+    }
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3,7,5,6,4};
+        //int[] arr = {1,2,3,7,5,6,4};
+        int[] arr = {1,2,3,4,5,6,7};
         MinHeightBST mhbst = new MinHeightBST(arr);
         ArrayList<LinkedList<Integer>> listOfDepth = mhbst.listOfDepth();
         listOfDepth.forEach(
@@ -249,6 +374,7 @@ public class MinHeightBST {
             System.out.println("is BST");
         else
             System.out.println("not BST");
+        System.out.println(mhbst.traversalIterative(2));
         /*
         for(LinkedList<Integer> list: listOfDepth) {
             list.forEach(e->System.out.print(e + " "));
