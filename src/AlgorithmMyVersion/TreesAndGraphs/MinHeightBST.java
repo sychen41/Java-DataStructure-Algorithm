@@ -1,4 +1,4 @@
-package AlgorithmMyVersion;
+package AlgorithmMyVersion.TreesAndGraphs;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package AlgorithmMyVersion;
+package AlgorithmMyVersion.Others;
 
 import DataStructureMyVersion.MyHashTableVer1;
 

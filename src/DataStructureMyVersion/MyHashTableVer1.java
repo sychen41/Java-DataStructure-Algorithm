@@ -18,6 +18,7 @@ public class MyHashTableVer1<K,V> implements MyHashTable<K,V> {
     public MyHashTableVer1() {
         this(5);  //default value
     }
+    @SuppressWarnings("unchecked")
     public MyHashTableVer1(int size) {
         this.arrLength = size;
         arrayOfLList = new MyLinkedListVer1[this.arrLength];
