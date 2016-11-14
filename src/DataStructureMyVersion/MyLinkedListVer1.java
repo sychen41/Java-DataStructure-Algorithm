@@ -6,15 +6,16 @@ import java.util.Iterator;
  * Created by Shiyi on 11/2/2016.
  */
 public class MyLinkedListVer1<T> implements MyLinkedList<T> {
-    class Node {
-        T item;
-        Node next;
-        Node(T item) {
+    protected class Node {
+        public T item = null;
+        public Node next = null;
+        public Node() {
+        }
+        public Node(T item) {
             this.item = item;
-            this.next = null;
         }
     }
-    private Node head;
+    protected Node head;
     public MyLinkedListVer1() {
         head = null;
     }
@@ -131,5 +132,13 @@ public class MyLinkedListVer1<T> implements MyLinkedList<T> {
             current = current.next;
             return temp;
         }
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Iterator<T> iter = iterator();
+        while(iter.hasNext())
+            sb.append(iter.next() + " ");
+        return sb.toString();
     }
 }

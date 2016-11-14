@@ -10,4 +10,5 @@ public interface MyLinkedList<T> extends Iterable<T> {
     T peekFirst();
     boolean contains(T item);
     void delete(T item);
+    String toString();
 }
